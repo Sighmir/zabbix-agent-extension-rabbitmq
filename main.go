@@ -19,7 +19,7 @@ func main() {
 	usage := `zabbix-agent-extension-rabbitmq
 
 Usage:
-    zabbix-agent-extension-rabbitmq [-r <address>] [-u <name>] [-s <password>] [-c <path>] [-z <host>] [-p <number>] [-d [-g <name>] [-a]]
+    zabbix-agent-extension-rabbitmq [-r <address>] [-u <name>] [-s <password>] [-c <path>] [-z <host>] [-p <number>] [-h <host>] [-d [-g <name>] [-a]]
 
 RabbitMQ options:
 	-r --rabbitmq <address>          Listen address of RabbitMQ server [default: http://127.0.0.1:15672]
@@ -28,14 +28,15 @@ RabbitMQ options:
 	-c --ca <path>                   Path to CA file. [default: ` + noneValue + `]
 
 Zabbix options:
-    -z --zabbix <host>         Hostname or IP address of Zabbix server [default: 127.0.0.1]
+  -z --zabbix <host>         Hostname or IP address of Zabbix server [default: 127.0.0.1]
     -p --zabbix-port <number>  Port of Zabbix server [default: 10051]
+    -h --host <host>         Hostname of the target host [default: None]
 	-d --discovery             Run low-level discovery for determine queues, exchanges, etc.
 	-a --aggregate             Discovery aggregate items.
 	-g --group <name>          Group name which will be use for aggregate item values.[default: None]
 
 Misc options:
-    -h --help                  Show this screen.
+  --help                  Show this screen.
 	-v --version               Show version.
 `
 
@@ -57,11 +58,7 @@ Misc options:
 
 	var metrics []*zsend.Metric
 
-	hostname, err := os.Hostname()
-	if err != nil {
-		fmt.Println(err.Error())
-		os.Exit(1)
-	}
+	hostname := args["--host"].(string)
 
 	rmqc, err = makeRabbitMQClient(
 		parseDSN(args["--rabbitmq"].(string)),
