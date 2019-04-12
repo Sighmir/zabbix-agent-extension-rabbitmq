@@ -8,9 +8,9 @@ This extension for monitoring RabbitMQ in standalone or cluster mode.
   - Auto discovery all queues (LLD)
   - Triggers on discovered queues
   - Configurable triggers of queue max capacity by macro
- 
+
 #### This extension provides following information about each RabbitMQ queue:
-  
+
   - consumers
   - memory usage
   - messages
@@ -23,17 +23,17 @@ This extension for monitoring RabbitMQ in standalone or cluster mode.
   - get_no_ack rate
   - publish rate
   - redeliver rate
-  
+
 #### Also extension by default have triggers which detect following situations:
-  - `infinity or very long redeliver` - it happens when some message/s don't ACKed by a consumer and 
+  - `infinity or very long redeliver` - it happens when some message/s don't ACKed by a consumer and
   they always move back to queue. It's not always a bad situation but for us, it means a problem with messages or consumer.
-  - `zero deliver rate when queue not empty` - I think this is also a bad situation when you have some messages in the queue 
+  - `zero deliver rate when queue not empty` - I think this is also a bad situation when you have some messages in the queue
   but have not anyone consumer for handle that messages
-  
+
 ## Dependencies
 
   - Enabled RabbitMQ management plugin [https://www.rabbitmq.com/management.html](https://www.rabbitmq.com/management.html)
-  
+
 ## Make dependencies
 
   - Golang (please refer to your Linux distribution documentation for Golang installation)
@@ -44,7 +44,7 @@ This extension for monitoring RabbitMQ in standalone or cluster mode.
 #### ArchLinux package
 
 ```sh
-git clone https://github.com/zarplata/zabbix-agent-extension-rabbitmq.git
+git clone https://github.com/sighmir/zabbix-agent-extension-rabbitmq.git
 cd zabbix-agent-extension-rabbitmq
 ./build-archlinux.sh
 sudo pacman -U *.tar.xz --noconfirm
@@ -54,7 +54,7 @@ systemctl restart zabbix-agent
 #### From source
 
 ```sh
-git clone https://github.com/zarplata/zabbix-agent-extension-rabbitmq.git
+git clone https://github.com/sighmir/zabbix-agent-extension-rabbitmq.git
 cd zabbix-agent-extension-rabbitmq
 make
 
@@ -71,7 +71,7 @@ export GOBIN="/usr/lib/golang/bin/"
 export PATH=$PATH:$GOBIN
 curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
 cd /usr/lib/golang/src
-git clone https://github.com/zarplata/zabbix-agent-extension-rabbitmq.git
+git clone https://github.com/sighmir/zabbix-agent-extension-rabbitmq.git
 cd zabbix-agent-extension-rabbitmq/
 make
 cp .out/zabbix-agent-extension-rabbitmq /usr/bin/
@@ -80,15 +80,16 @@ systemctl restart zabbix-agent.service
 ```
 
 **Be note!**
-  - You should add a global macro (Administration -> General -> Macros) - `{$ZABBIX_SERVER_IP}` with your Zabbix server IP. 
+  - You should add a global macro (Administration -> General -> Macros) - `{$ZABBIX_SERVER_IP}` with your Zabbix server IP.
   - For both installation you also should import `template_app_rabbitmq_service.xml` template into Zabbix server.
   - Zabbix agent extensible directory path depends on Linux distribution and can be mismatch with the directory in this manual
-  
-  
+
+
 ## Configuration
 
 #### Macros
 
+  - `{$HOSTNAME}` - The name of your host.
   - `{$RABBITMQ_PORT}` - RabbitMQ server port [default: 5672]
   - `{$RABBITMQ_MGMT_ADDRESS}` - RabbitMQ management address [default: http://127.0.0.1:15672]
   - `{$RABBITMQ_CA_PATH}` - Path to custom CA. It may use if RabbitMQ runs management plugin over HTTPS with self-signed certificate.
