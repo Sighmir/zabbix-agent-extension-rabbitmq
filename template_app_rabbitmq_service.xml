@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2019-03-12T05:04:56Z</date>
+    <date>2019-04-12T21:41:57Z</date>
     <groups>
         <group>
             <name>Templates/Used</name>
@@ -9,8 +9,8 @@
     </groups>
     <templates>
         <template>
-            <template>Template App Rabbitmq Service</template>
-            <name>Template App Rabbitmq Service</name>
+            <template>Template App RabbitMQ Service</template>
+            <name>Template App RabbitMQ Service</name>
             <description/>
             <groups>
                 <group>
@@ -19,10 +19,10 @@
             </groups>
             <applications>
                 <application>
-                    <name>Development.Rabbitmq</name>
+                    <name>RabbitMQ</name>
                 </application>
                 <application>
-                    <name>Rabbitmq</name>
+                    <name>RabbitMQ Aggregate</name>
                 </application>
             </applications>
             <items>
@@ -58,7 +58,7 @@
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
-                            <name>Rabbitmq</name>
+                            <name>RabbitMQ</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -99,7 +99,7 @@
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
-                            <name>Rabbitmq</name>
+                            <name>RabbitMQ</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -140,7 +140,7 @@
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
-                            <name>Rabbitmq</name>
+                            <name>RabbitMQ</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -186,7 +186,7 @@
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
-                            <name>Rabbitmq</name>
+                            <name>RabbitMQ</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -227,7 +227,7 @@
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
-                            <name>Rabbitmq</name>
+                            <name>RabbitMQ</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -268,7 +268,7 @@
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
-                            <name>Rabbitmq</name>
+                            <name>RabbitMQ</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -309,7 +309,7 @@
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
-                            <name>Rabbitmq</name>
+                            <name>RabbitMQ</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -350,7 +350,7 @@
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
-                            <name>Rabbitmq</name>
+                            <name>RabbitMQ</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -391,7 +391,7 @@
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
-                            <name>Rabbitmq</name>
+                            <name>RabbitMQ</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -432,7 +432,7 @@
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
-                            <name>Rabbitmq</name>
+                            <name>RabbitMQ</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -446,7 +446,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>rabbitmq.stats[{$ZABBIX_SERVER_IP},{$RABBITMQ_MGMT_ADDRESS},{$RABBITMQ_USER},{$RABBITMQ_PASSWORD},{$RABBITMQ_CA_PATH}]</key>
+                    <key>rabbitmq.stats[{HOSTNAME},{$ZABBIX_SERVER_IP},{$RABBITMQ_MGMT_ADDRESS},{$RABBITMQ_USER},{$RABBITMQ_PASSWORD},{$RABBITMQ_CA_PATH}]</key>
                     <delay>30</delay>
                     <history>90d</history>
                     <trends>0</trends>
@@ -473,7 +473,7 @@
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
-                            <name>Rabbitmq</name>
+                            <name>RabbitMQ</name>
                         </application>
                     </applications>
                     <valuemap/>
@@ -485,13 +485,13 @@
             </items>
             <discovery_rules>
                 <discovery_rule>
-                    <name>Rabbitmq aggregate discovery</name>
+                    <name>RabbitMQ aggregate discovery</name>
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
                     <key>rabbitmq.aggregate.discovery[{$GROUPNAME},{$RABBITMQ_MGMT_ADDRESS},{$RABBITMQ_USER},{$RABBITMQ_PASSWORD},{$RABBITMQ_CA_PATH}]</key>
                     <delay>30</delay>
-                    <status>0</status>
+                    <status>1</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
                     <snmpv3_securityname/>
@@ -555,10 +555,10 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Development.Rabbitmq</name>
+                                    <name>RabbitMQ</name>
                                 </application>
                                 <application>
-                                    <name>Rabbitmq</name>
+                                    <name>RabbitMQ Aggregate</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -600,10 +600,10 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Development.Rabbitmq</name>
+                                    <name>RabbitMQ</name>
                                 </application>
                                 <application>
-                                    <name>Rabbitmq</name>
+                                    <name>RabbitMQ Aggregate</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -645,10 +645,10 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Development.Rabbitmq</name>
+                                    <name>RabbitMQ</name>
                                 </application>
                                 <application>
-                                    <name>Rabbitmq</name>
+                                    <name>RabbitMQ Aggregate</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -690,10 +690,10 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Development.Rabbitmq</name>
+                                    <name>RabbitMQ</name>
                                 </application>
                                 <application>
-                                    <name>Rabbitmq</name>
+                                    <name>RabbitMQ Aggregate</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -706,7 +706,45 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template App Rabbitmq Service:grpavg[&quot;{#GROUPNAME}&quot;, &quot;rabbitmq.queue.messages_stats.redeliver[{#AGGQUEUENAME}]&quot;,last,0].min(30m)}&lt;&gt;0</expression>
+                            <expression>{Template App RabbitMQ Service:grpavg[&quot;{#GROUPNAME}&quot;, &quot;rabbitmq.queue.messages[{#AGGQUEUENAME}]&quot;,last,0].min(#5)}&gt;{$MAX_MESSAGES:&quot;{#AGGQUEUENAME}&quot;}</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>Messages in {#AGGQUEUENAME} above {$MAX_MESSAGES:&quot;{#AGGQUEUENAME}&quot;}</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>5</priority>
+                            <description/>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Template App RabbitMQ Service:grpavg[&quot;{#GROUPNAME}&quot;, &quot;rabbitmq.queue.messages[{#AGGQUEUENAME}]&quot;,last,0].min(#5)}&gt;{$MAX_MESSAGES_WARN:&quot;{#AGGQUEUENAME}&quot;}</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>Messages in {#AGGQUEUENAME} above {$MAX_MESSAGES_WARN:&quot;{#AGGQUEUENAME}&quot;}</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>4</priority>
+                            <description/>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies>
+                                <dependency>
+                                    <name>Messages in {#AGGQUEUENAME} above {$MAX_MESSAGES:&quot;{#AGGQUEUENAME}&quot;}</name>
+                                    <expression>{Template App RabbitMQ Service:grpavg[&quot;{#GROUPNAME}&quot;, &quot;rabbitmq.queue.messages[{#AGGQUEUENAME}]&quot;,last,0].min(#5)}&gt;{$MAX_MESSAGES:&quot;{#AGGQUEUENAME}&quot;}</expression>
+                                    <recovery_expression/>
+                                </dependency>
+                            </dependencies>
+                            <tags/>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Template App RabbitMQ Service:grpavg[&quot;{#GROUPNAME}&quot;, &quot;rabbitmq.queue.messages_stats.redeliver[{#AGGQUEUENAME}]&quot;,last,0].min(30m)}&lt;&gt;0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Redeliver rate in {#AGGQUEUENAME} is not null last 30 minutes</name>
@@ -722,30 +760,14 @@
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template App Rabbitmq Service:grpavg[&quot;{#GROUPNAME}&quot;, &quot;rabbitmq.queue.messages[{#AGGQUEUENAME}]&quot;,last,0].min(#5)}&gt;{$MAX_MESSAGES:&quot;{#AGGQUEUENAME}&quot;}</expression>
-                            <recovery_mode>0</recovery_mode>
-                            <recovery_expression/>
-                            <name>Too much messages in {#AGGQUEUENAME}</name>
-                            <correlation_mode>0</correlation_mode>
-                            <correlation_tag/>
-                            <url/>
-                            <status>0</status>
-                            <priority>2</priority>
-                            <description/>
-                            <type>0</type>
-                            <manual_close>0</manual_close>
-                            <dependencies/>
-                            <tags/>
-                        </trigger_prototype>
-                        <trigger_prototype>
-                            <expression>{Template App Rabbitmq Service:grpavg[&quot;{#GROUPNAME}&quot;, &quot;rabbitmq.queue.messages[{#AGGQUEUENAME}]&quot;,last,0].min(#10)}&gt;0 and {Template App Rabbitmq Service:grpavg[&quot;{#GROUPNAME}&quot;, &quot;rabbitmq.queue.messages_stats.deliver[{#AGGQUEUENAME}]&quot;,last,0].max(#10)}=0</expression>
+                            <expression>{Template App RabbitMQ Service:grpavg[&quot;{#GROUPNAME}&quot;, &quot;rabbitmq.queue.messages[{#AGGQUEUENAME}]&quot;,last,0].min(#10)}&gt;0 and {Template App RabbitMQ Service:grpavg[&quot;{#GROUPNAME}&quot;, &quot;rabbitmq.queue.messages_stats.deliver[{#AGGQUEUENAME}]&quot;,last,0].max(#10)}=0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Zero rate of delivery in {#AGGQUEUENAME}</name>
                             <correlation_mode>0</correlation_mode>
                             <correlation_tag/>
                             <url/>
-                            <status>0</status>
+                            <status>1</status>
                             <priority>4</priority>
                             <description/>
                             <type>0</type>
@@ -759,7 +781,7 @@
                     <jmx_endpoint/>
                 </discovery_rule>
                 <discovery_rule>
-                    <name>Rabbitmq queue discovery</name>
+                    <name>RabbitMQ queue discovery</name>
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
@@ -822,7 +844,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Rabbitmq</name>
+                                    <name>RabbitMQ</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -864,7 +886,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Rabbitmq</name>
+                                    <name>RabbitMQ</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -906,7 +928,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Rabbitmq</name>
+                                    <name>RabbitMQ</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -948,7 +970,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Rabbitmq</name>
+                                    <name>RabbitMQ</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -990,7 +1012,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Rabbitmq</name>
+                                    <name>RabbitMQ</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1037,7 +1059,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Rabbitmq</name>
+                                    <name>RabbitMQ</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1084,7 +1106,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Rabbitmq</name>
+                                    <name>RabbitMQ</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1131,7 +1153,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Rabbitmq</name>
+                                    <name>RabbitMQ</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1178,7 +1200,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Rabbitmq</name>
+                                    <name>RabbitMQ</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1225,7 +1247,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Rabbitmq</name>
+                                    <name>RabbitMQ</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1272,7 +1294,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Rabbitmq</name>
+                                    <name>RabbitMQ</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1319,7 +1341,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Rabbitmq</name>
+                                    <name>RabbitMQ</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1361,7 +1383,7 @@
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
-                                    <name>Rabbitmq</name>
+                                    <name>RabbitMQ</name>
                                 </application>
                             </applications>
                             <valuemap/>
@@ -1390,7 +1412,11 @@
                 </macro>
                 <macro>
                     <macro>{$MAX_MESSAGES}</macro>
-                    <value>1000000</value>
+                    <value>100000</value>
+                </macro>
+                <macro>
+                    <macro>{$MAX_MESSAGES_WARN}</macro>
+                    <value>50000</value>
                 </macro>
                 <macro>
                     <macro>{$RABBITMQ_CA_PATH}</macro>
@@ -1398,7 +1424,7 @@
                 </macro>
                 <macro>
                     <macro>{$RABBITMQ_MGMT_ADDRESS}</macro>
-                    <value>http://127.0.0.1:15672</value>
+                    <value>http:/localhost:15672</value>
                 </macro>
                 <macro>
                     <macro>{$RABBITMQ_PASSWORD}</macro>
@@ -1419,7 +1445,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template App Rabbitmq Service:rabbitmq.stats[{$ZABBIX_SERVER_IP},{$RABBITMQ_MGMT_ADDRESS},{$RABBITMQ_USER},{$RABBITMQ_PASSWORD},{$RABBITMQ_CA_PATH}].regexp(OK)}=0</expression>
+            <expression>{Template App RabbitMQ Service:rabbitmq.stats[{HOSTNAME},{$ZABBIX_SERVER_IP},{$RABBITMQ_MGMT_ADDRESS},{$RABBITMQ_USER},{$RABBITMQ_PASSWORD},{$RABBITMQ_CA_PATH}].regexp(OK)}=0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Can't obtain RabbitMQ stats</name>
@@ -1435,7 +1461,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template App Rabbitmq Service:rabbitmq.memory_alarm.avg(#3)}&lt;&gt;0</expression>
+            <expression>{Template App RabbitMQ Service:rabbitmq.memory_alarm.avg(#3)}&lt;&gt;0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>RabbitMQ Memory Alarm (publishers blocked)</name>
@@ -1451,7 +1477,7 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template App Rabbitmq Service:proc.num[,,,rabbitmq_server].max(#3)}=0  or {Template App Rabbitmq Service:net.tcp.service[tcp,,{$RABBITMQ_PORT}].max(#3)}=0</expression>
+            <expression>{Template App RabbitMQ Service:proc.num[,,,rabbitmq_server].max(#3)}=0  or {Template App RabbitMQ Service:net.tcp.service[tcp,,{$RABBITMQ_PORT}].max(#3)}=0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>RabbitMQ process is NOT running</name>
