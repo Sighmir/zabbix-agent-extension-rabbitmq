@@ -89,7 +89,6 @@ systemctl restart zabbix-agent.service
 
 #### Macros
 
-  - `{$HOSTNAME}` - The name of your host.
   - `{$RABBITMQ_PORT}` - RabbitMQ server port [default: 5672]
   - `{$RABBITMQ_MGMT_ADDRESS}` - RabbitMQ management address [default: http://127.0.0.1:15672]
   - `{$RABBITMQ_CA_PATH}` - Path to custom CA. It may use if RabbitMQ runs management plugin over HTTPS with self-signed certificate.
