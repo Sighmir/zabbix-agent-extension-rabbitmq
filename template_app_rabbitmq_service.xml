@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.4</version>
-    <date>2019-07-03T14:25:35Z</date>
+    <date>2019-07-03T18:34:40Z</date>
     <groups>
         <group>
             <name>Templates/Used</name>
@@ -1786,6 +1786,10 @@
                     <value>50</value>
                 </macro>
                 <macro>
+                    <macro>{$BALANCE_OFFSET_MIN}</macro>
+                    <value>20</value>
+                </macro>
+                <macro>
                     <macro>{$EXTENSION_NAME}</macro>
                     <value>zabbix-agent-extension-rabbitmq</value>
                 </macro>
@@ -1848,7 +1852,17 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template App RabbitMQ Service:rabbitmq.cpu.avg(#5)}/{Template App RabbitMQ Service:grpavg[&quot;{$GROUPNAME}&quot;, &quot;rabbitmq.cpu&quot;,last,0].avg(#5)}&gt;((100+{$BALANCE_OFFSET:&quot;CPU&quot;})/100) or {Template App RabbitMQ Service:rabbitmq.cpu.avg(#5)}/{Template App RabbitMQ Service:grpavg[&quot;{$GROUPNAME}&quot;, &quot;rabbitmq.cpu&quot;,last,0].avg(#5)}&lt;({$BALANCE_OFFSET:&quot;CPU&quot;}/100)</expression>
+            <expression>(&#13;
+  {Template App RabbitMQ Service:rabbitmq.cpu.avg(#5)}/{Template App RabbitMQ Service:grpavg[&quot;{$GROUPNAME}&quot;, &quot;rabbitmq.cpu&quot;,last,0].avg(#5)}&gt;((100+{$BALANCE_OFFSET:&quot;CPU&quot;})/100) &#13;
+  and&#13;
+  {Template App RabbitMQ Service:rabbitmq.cpu.avg(#5)}-{Template App RabbitMQ Service:grpavg[&quot;{$GROUPNAME}&quot;, &quot;rabbitmq.cpu&quot;,last,0].avg(#5)}&gt;{$BALANCE_OFFSET_MIN:&quot;CPU&quot;}&#13;
+)&#13;
+or&#13;
+(&#13;
+  {Template App RabbitMQ Service:rabbitmq.cpu.avg(#5)}/{Template App RabbitMQ Service:grpavg[&quot;{$GROUPNAME}&quot;, &quot;rabbitmq.cpu&quot;,last,0].avg(#5)}&lt;((100-{$BALANCE_OFFSET:&quot;CPU&quot;})/100)&#13;
+  and&#13;
+  {Template App RabbitMQ Service:rabbitmq.cpu.avg(#5)}-{Template App RabbitMQ Service:grpavg[&quot;{$GROUPNAME}&quot;, &quot;rabbitmq.cpu&quot;,last,0].avg(#5)}&lt;-{$BALANCE_OFFSET_MIN:&quot;CPU&quot;}&#13;
+)</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>RabbitMQ cpu usage is unbalanced</name>
@@ -1864,7 +1878,17 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template App RabbitMQ Service:rabbitmq.disk.avg(#5)}/{Template App RabbitMQ Service:grpavg[&quot;{$GROUPNAME}&quot;, &quot;rabbitmq.disk&quot;,last,0].avg(#5)}&gt;((100+{$BALANCE_OFFSET:&quot;DISK&quot;})/100) or {Template App RabbitMQ Service:rabbitmq.disk.avg(#5)}/{Template App RabbitMQ Service:grpavg[&quot;{$GROUPNAME}&quot;, &quot;rabbitmq.disk&quot;,last,0].avg(#5)}&lt;({$BALANCE_OFFSET:&quot;DISK&quot;}/100)</expression>
+            <expression>(&#13;
+  {Template App RabbitMQ Service:rabbitmq.disk.avg(#5)}/{Template App RabbitMQ Service:grpavg[&quot;{$GROUPNAME}&quot;, &quot;rabbitmq.disk&quot;,last,0].avg(#5)}&gt;((100+{$BALANCE_OFFSET:&quot;DISK&quot;})/100) &#13;
+  and&#13;
+  {Template App RabbitMQ Service:rabbitmq.disk.avg(#5)}-{Template App RabbitMQ Service:grpavg[&quot;{$GROUPNAME}&quot;, &quot;rabbitmq.disk&quot;,last,0].avg(#5)}&gt;{$BALANCE_OFFSET_MIN:&quot;DISK&quot;}&#13;
+)&#13;
+or&#13;
+(&#13;
+  {Template App RabbitMQ Service:rabbitmq.disk.avg(#5)}/{Template App RabbitMQ Service:grpavg[&quot;{$GROUPNAME}&quot;, &quot;rabbitmq.disk&quot;,last,0].avg(#5)}&lt;((100-{$BALANCE_OFFSET:&quot;DISK&quot;})/100)&#13;
+  and&#13;
+  {Template App RabbitMQ Service:rabbitmq.disk.avg(#5)}-{Template App RabbitMQ Service:grpavg[&quot;{$GROUPNAME}&quot;, &quot;rabbitmq.disk&quot;,last,0].avg(#5)}&lt;-{$BALANCE_OFFSET_MIN:&quot;DISK&quot;}&#13;
+)</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>RabbitMQ disk usage is unbalanced</name>
@@ -1896,7 +1920,17 @@
             <tags/>
         </trigger>
         <trigger>
-            <expression>{Template App RabbitMQ Service:rabbitmq.memory.avg(#5)}/{Template App RabbitMQ Service:grpavg[&quot;{$GROUPNAME}&quot;, &quot;rabbitmq.memory&quot;,last,0].avg(#5)}&gt;((100+{$BALANCE_OFFSET:&quot;MEMORY&quot;})/100) or {Template App RabbitMQ Service:rabbitmq.memory.avg(#5)}/{Template App RabbitMQ Service:grpavg[&quot;{$GROUPNAME}&quot;, &quot;rabbitmq.memory&quot;,last,0].avg(#5)}&lt;({$BALANCE_OFFSET:&quot;MEMORY&quot;}/100)</expression>
+            <expression>(&#13;
+  {Template App RabbitMQ Service:rabbitmq.memory.avg(#5)}/{Template App RabbitMQ Service:grpavg[&quot;{$GROUPNAME}&quot;, &quot;rabbitmq.memory&quot;,last,0].avg(#5)}&gt;((100+{$BALANCE_OFFSET:&quot;MEMORY&quot;})/100) &#13;
+  and&#13;
+  {Template App RabbitMQ Service:rabbitmq.memory.avg(#5)}-{Template App RabbitMQ Service:grpavg[&quot;{$GROUPNAME}&quot;, &quot;rabbitmq.memory&quot;,last,0].avg(#5)}&gt;{$BALANCE_OFFSET_MIN:&quot;MEMORY&quot;}&#13;
+)&#13;
+or&#13;
+(&#13;
+  {Template App RabbitMQ Service:rabbitmq.memory.avg(#5)}/{Template App RabbitMQ Service:grpavg[&quot;{$GROUPNAME}&quot;, &quot;rabbitmq.memory&quot;,last,0].avg(#5)}&lt;((100-{$BALANCE_OFFSET:&quot;MEMORY&quot;})/100)&#13;
+  and&#13;
+  {Template App RabbitMQ Service:rabbitmq.memory.avg(#5)}-{Template App RabbitMQ Service:grpavg[&quot;{$GROUPNAME}&quot;, &quot;rabbitmq.memory&quot;,last,0].avg(#5)}&lt;-{$BALANCE_OFFSET_MIN:&quot;MEMORY&quot;}&#13;
+)</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>RabbitMQ memory usage is unbalanced</name>
