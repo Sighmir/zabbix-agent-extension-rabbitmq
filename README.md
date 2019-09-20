@@ -79,6 +79,31 @@ cp zabbix-agent-extension-rabbitmq.conf /etc/zabbix/zabbix_agentd.d/
 systemctl restart zabbix-agent.service
 ```
 
+#### From source: Debian/Ubuntu
+```sh
+wget https://dl.google.com/go/go1.12.7.linux-amd64.tar.gz
+tar -xvf go1.12.7.linux-amd64.tar.gz
+sudo mv go /usr/local
+sudo rm -rf go1.12.7.linux-amd64.tar.gz
+mkdir /usr/local/golang
+export GOROOT=/usr/local/go
+export GOPATH=/usr/local/golang
+export GOBIN=$GOPATH/bin
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+cd $GOPATH
+mkdir src
+mkdir bin
+wget https://raw.githubusercontent.com/golang/dep/master/install.sh
+sh install.sh
+cd src
+git clone https://github.com/sighmir/zabbix-agent-extension-rabbitmq.git
+cd zabbix-agent-extension-rabbitmq/
+make
+cp .out/zabbix-agent-extension-rabbitmq /usr/bin/
+cp zabbix-agent-extension-rabbitmq.conf /etc/zabbix/zabbix_agentd.d/
+systemctl restart zabbix-agent.service
+```
+
 **Be note!**
   - You should add a global macro (Administration -> General -> Macros) - `{$ZABBIX_SERVER_IP}` with your Zabbix server IP.
   - For both installation you also should import `template_app_rabbitmq_service.xml` template into Zabbix server.
